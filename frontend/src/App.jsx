@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import StudentDashboard from './StudentDashboard';
 
 function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [view, setView] = useState('login'); // 'login' or 'dashboard'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,16 +26,21 @@ function App() {
 
       if (response.ok) {
         setMessage({ type: 'success', text: `Welcome back, ${username}! Login successful.` });
+        setTimeout(() => setView('dashboard'), 1500);
         // You could store the token here if needed: localStorage.setItem('token', data.token);
       } else {
         setMessage({ type: 'error', text: data.error || 'Login failed' });
       }
-    } catch (error) {
+    } catch {
       setMessage({ type: 'error', text: 'Server connection failed. Is the backend running?' });
     } finally {
       setLoading(false);
     }
   };
+
+  if (view === 'dashboard') {
+    return <StudentDashboard />;
+  }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-white font-sans selection:bg-blue-600 selection:text-white">
