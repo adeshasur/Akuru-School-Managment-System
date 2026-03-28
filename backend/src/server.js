@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const db = require('./config/db'); // Load the database connection
 
 // Initialize Express application
 const app = express();
