@@ -24,6 +24,25 @@ const db = new sqlite3.Database('./school_system.db', (err) => {
                 console.log("Users table is ready.");
             }
         });
+
+        // Create Students table for managing student records
+        const createStudentsTable = `
+            CREATE TABLE IF NOT EXISTS students (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                firstName TEXT,
+                lastName TEXT,
+                dob TEXT,
+                address TEXT
+            )
+        `;
+        
+        db.run(createStudentsTable, (err) => {
+            if (err) {
+                console.error("Students Table error: ", err.message);
+            } else {
+                console.log("Students table is ready.");
+            }
+        });
     }
 });
 
