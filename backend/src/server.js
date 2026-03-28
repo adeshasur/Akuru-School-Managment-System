@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./config/db'); // Load the database connection
+const authRoutes = require('./routes/authRoutes'); // Import authentication routes
 
 // Initialize Express application
 const app = express();
@@ -8,6 +9,9 @@ const app = express();
 // Enable CORS and JSON parsing
 app.use(cors());
 app.use(express.json());
+
+// Main API routes
+app.use('/api/auth', authRoutes); // Mount authentication routes to /api/auth
 
 // Root route for server health check
 app.get('/', (req, res) => {
