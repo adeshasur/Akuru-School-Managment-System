@@ -1,4 +1,4 @@
-const db = require('../../config/db');
+const db = require('../../../config/db');
 
 class StudentModel {
     // 1. Get all students
