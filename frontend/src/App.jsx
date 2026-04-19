@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import StudentDashboard from './features/student/pages/StudentDashboard';
+import StudentDashboard from './features/academic/student/pages/StudentDashboard';
 
 function App() {
   const [username, setUsername] = useState('');
