@@ -1,0 +1,35 @@
+මචං, මෙන්න full system එකේ සම්පූර්ණ requirements (Functional සහ Non-Functional) ටික. මේක තමයි ඔයාගේ සම්පූර්ණ scope එක.
+
+Functional Requirements (Modules 16 ට අදාල වැඩ ටික):
+
+Student Management: අලුත් students ලා system එකට enroll කරන එක. Profiles Create, Read, Update, Delete (CRUD) කරන එක. අවුරුද්ද අන්තිමට ළමයි ඊළඟ පන්තියට promote කරන batch process එක.
+
+Staff/Teacher Management: Teachers ලාගේ profiles maintain කරන එක. එයාලට subjects සහ classes assign කරන mapping එක.
+
+Attendance Management: Daily attendance mark කරන එක. මාසිකව සහ වාර්ෂිකව attendance reports generate කරන එක.
+
+Exam & Grading: Term tests වල marks input කරන එක. Grades (A, B, C) calculate කරන logic එක. Report cards (PDF) generate කරන එක.
+
+Timetable Management: Classes සහ teachers ලට schedules හදන එක. Periods clash වෙන්නේ නැති වෙන්න validate කරන එක.
+
+Finance & Fee Management: School fees collect කරන එක. Invoices generate කරන එක. Payment status එක track කරන එක.
+
+Library Management: Books inventory එක maintain කරන එක. Books issue කරන සහ return කරන records update කරන එක.
+
+Transport Management: School vans වල routes සහ assign කරපු students ලගේ lists manage කරන එක.
+
+Inventory & Asset Management: School equipments (lab items, desks) වල stock count එක track කරන එක.
+
+Noticeboard & Communication: System dashboard එකට notices push කරන එක. අලුත් notices ආවාම alerts trigger කරන එක.
+
+Homework & Assignment: Teachers ලා assignments upload කරන එක. Students ලා ඒවට answers submit කරන එක.
+
+Leave Management: Teachers ලා leave requests submit කරන එක. Admin ඒක approve හෝ reject කරන workflow එක.
+
+Parent Portal: Parents ලට වෙනම login එකක් දීලා, ළමයාගේ marks සහ attendance read-only විදිහට බලන්න පුළුවන් dashboard එක.
+
+Disciplinary Management: Students ලගේ warnings සහ issues record කරන log එක.
+
+Event & Calendar: School events schedule කරන shared calendar එකක් maintain කරන එක.
+
+Alumni Management: ඉස්කෝලෙන් අයින් වෙලා යන ළමයින්ගේ details database එකේ archive කරලා තියාගන්න එක.

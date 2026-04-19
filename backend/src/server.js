@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./config/db'); // Load the database connection
-const authRoutes = require('./routes/authRoutes'); // Import authentication routes
-const studentRoutes = require('./routes/studentRoutes'); // Import student management routes
+const authRoutes = require('./routes/authRoutes'); // Keep old auth routes for now
+const studentRoutes = require('./modules/student/student.routes'); // Import modular student management routes
 
 // Initialize Express application
 const app = express();

@@ -32,7 +32,11 @@ const db = new sqlite3.Database('./school_system.db', (err) => {
                 firstName TEXT,
                 lastName TEXT,
                 dob TEXT,
-                address TEXT
+                address TEXT,
+                currentGrade INTEGER DEFAULT 1,
+                parentName TEXT,
+                contactNumber TEXT,
+                enrollmentDate TEXT
             )
         `;
         
@@ -41,6 +45,23 @@ const db = new sqlite3.Database('./school_system.db', (err) => {
                 console.error("Students Table error: ", err.message);
             } else {
                 console.log("Students table is ready.");
+                
+                // Add new columns to existing table if they don't exist (poor man's migration for SQLite)
+                const newColumns = [
+                    "ALTER TABLE students ADD COLUMN currentGrade INTEGER DEFAULT 1",
+                    "ALTER TABLE students ADD COLUMN parentName TEXT",
+                    "ALTER TABLE students ADD COLUMN contactNumber TEXT",
+                    "ALTER TABLE students ADD COLUMN enrollmentDate TEXT"
+                ];
+
+                newColumns.forEach(query => {
+                    db.run(query, (err) => {
+                        // Ignore duplicate column errors
+                        if (err && !err.message.includes("duplicate column name")) {
+                            // Suppress error or log if not duplicate
+                        }
+                    });
+                });
             }
         });
     }
