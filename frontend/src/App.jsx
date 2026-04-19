@@ -7,7 +7,7 @@ function App() {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [view, setView] = useState('login'); // 'login' or 'dashboard'
+  const [view, setView] = useState('dashboard'); // Temporarily bypass login for development
 
   const handleSubmit = async (e) => {
     e.preventDefault();
